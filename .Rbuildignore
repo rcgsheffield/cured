@@ -1,3 +1,11 @@
 ^CUREd\\.Rproj$
 ^\\.Rproj\\.user$
+^README\.Rmd$
 ^LICENSE\.md$
+^cran-comments\.md$
+^data-raw$
+^pkgdown$
+^_pkgdown\.yml$
+^\.github$
+^*~$
+^#*$

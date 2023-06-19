@@ -1,11 +1,20 @@
 Package: CUREd
 Title: Linking NHS Digital and Unexpected Emergency Care Data in Yorkshire and Humber Region
 Version: 0.0.0.9000
-Authors@R:
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+Authors@R: c(
+    person("Neil", "Shephard", , "n.shephard@sheffield.ac.uk", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8301-6857"))
+    person("Tony", "Stone", "t.stone@sheffield.ac.uk", role = c("aut", "cre"),
+           comment = c(ORCID = ""))
+    person("Annabel", "Crumb", "a.crumb@sheffield.ac.uk", role = c("aut", "cre"),
+           comment = c(ORCID = "")))
 Description: Package for cleaning and linking data provisioned by NHS Digital, Yorkshire Ambulance Service and other Unexpected Emergency Care (UEC) services along with medicine dispensery data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+Imports:
+    data.table,
+    dplyr,
+    dtplyr,
+    duckdb
