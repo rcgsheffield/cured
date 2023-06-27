@@ -9,7 +9,7 @@ validation. Each sub-graph represents a particular data source and for each sour
 
 **NB** Unique row identifiers (`urid`) are a combination of the data source, the processing time and are padded with `0`.
 
-```{mermaid}
+```mermaid
 %%{init: {'theme': 'base',
           {"flowchart": {"htmllabels": false}},
           { "logLevel": 2 }
