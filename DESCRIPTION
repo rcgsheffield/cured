@@ -1,6 +1,8 @@
-Package: CUREd
+Package: cuRed
 Title: Linking NHS Digital and Unexpected Emergency Care Data in Yorkshire and Humber Region
 Version: 0.0.0.9000
+URL: https://github.com/CUREd-Plus/cuRed
+BugReports: https://github.com/CUREd-Plus/cuRed/issues
 Authors@R: c(
     person("Neil", "Shephard", , "n.shephard@sheffield.ac.uk", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-8301-6857"))
@@ -17,4 +19,9 @@ Imports:
     data.table,
     dplyr,
     dtplyr,
-    duckdb
+    duckdb,
+    IMD,
+    lubridate,
+    stringr
+Suggests:
+    codemetar
