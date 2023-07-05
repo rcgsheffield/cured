@@ -21,9 +21,11 @@ doi
 dplyr
 dtplyr
 duckdb
+familyName
 fileSize
 fromatted
 github
+givenName
 https
 Humber
 IMD
@@ -40,6 +42,7 @@ NHS
 NONINFRINGEMENT
 OPCSOps
 ORCID
+orcid
 Organisation
 organisation
 os
