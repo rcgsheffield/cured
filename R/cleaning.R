@@ -9,11 +9,11 @@ library(lubridate)
 #' @returns String vector of dates fromatted as yyyy-mm-dd
 #' @export
 #' @examples
-#' in_date <- c("01/02/1999", "03/04/2001")
+#' dates <- c("01/02/1999", "03/04/2001")
 #' date_to_isodate(dates, "dd/mm/yyyy")
-#' in_date <- c("19990201", "20010403")
+#' dates <- c("19990201", "20010403")
 #' date_to_isodate(dates, "yyyymmdd")
-#' in_date <- c("1999-02-01 16:01", "2001-04-03 09:00")
+#' dates <- c("1999-02-01 16:01", "2001-04-03 09:00")
 #' date_to_isodate(dates, "yyyy-mm-dd etc")
 date_to_isodate <- function(in_date, format_type) {
   # Converts to YYYY-MM-DD
