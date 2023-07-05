@@ -40,16 +40,6 @@
       "familyName": "Shephard",
       "email": "n.shephard@sheffield.ac.uk",
       "@id": "https://orcid.org/0000-0001-8301-6857"
-    },
-    {
-      "@type": "Person",
-      "givenName": ["Tony", "t.stone@sheffield.ac.uk"],
-      "familyName": "Stone"
-    },
-    {
-      "@type": "Person",
-      "givenName": ["Annabel", "a.crumb@sheffield.ac.uk"],
-      "familyName": "Crumb"
     }
   ],
   "softwareSuggestions": [
@@ -153,5 +143,5 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "54.97KB"
+  "fileSize": "54.983KB"
 }

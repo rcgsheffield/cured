@@ -6,9 +6,9 @@ BugReports: https://github.com/CUREd-Plus/cuRed/issues
 Authors@R: c(
     person("Neil", "Shephard", , "n.shephard@sheffield.ac.uk", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-8301-6857")),
-    person("Tony", "Stone", "t.stone@sheffield.ac.uk", role = c("aut", "cre"),
+    person("Tony", "Stone", "t.stone@sheffield.ac.uk", role = c("aut"),
            comment = c(ORCID = "")),
-    person("Annabel", "Crumb", "a.crumb@sheffield.ac.uk", role = c("aut", "cre"),
+    person("Annabel", "Crumb", "a.crumb@sheffield.ac.uk", role = c("aut"),
            comment = c(ORCID = "")))
 Description: Package for cleaning and linking data provisioned by NHS Digital, Yorkshire Ambulance Service and other Unexpected Emergency Care (UEC) services along with medicine dispensery data.
 License: MIT + file LICENSE
