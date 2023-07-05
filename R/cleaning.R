@@ -196,7 +196,7 @@ clean_names <- function(name) {
 
 #' Tidies NHS Numbers
 #'
-#' @param nhsnumber String vector of nhs numbers.
+#' @param nhs_number String vector of nhs numbers.
 #' @returns String vector of ten digits. Values that do not conform are converted to NA.
 #' @export
 # TODO - See if we can use https://github.com/sellorm/nhsnumber it includes checksum functionality
@@ -281,7 +281,7 @@ validate_postcode <- function(postcode) {
 #'
 #' @param field_in Variable to be validated.
 #' @param valid_codes List of valid codes.
-#' @param invalid_codes Invalid code to replace values not observed in valid_codes with.
+#' @param invalid_code Invalid code to replace values not observed in valid_codes with.
 #' @returns Vector of codes wher values not in valid_codes are replaced with invalid_code.
 #' @export
 validate_codes <- function(field_in, valid_codes, invalid_code) {
@@ -388,8 +388,8 @@ validate_numeric <- function(x, len) {
 
 #' Tidies Procodet
 #'
-#' @param prodocdet_in Prodocdet input
-#' @param prodocdet_sender Value to replace missing observations or when the length of the code is neither 3 nor 5.
+#' @param procodet_in Prodocdet input
+#' @param procodet_sender Value to replace missing observations or when the length of the code is neither 3 nor 5.
 #' @returns Tidied prodocdet of length 3 characters with no missing values.
 #' @export
 validate_procodet <- function(procodet_in, procodet_sender) {

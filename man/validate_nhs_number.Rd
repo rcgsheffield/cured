@@ -7,7 +7,7 @@
 validate_nhs_number(nhs_number)
 }
 \arguments{
-\item{nhsnumber}{String vector of nhs numbers.}
+\item{nhs_number}{String vector of nhs numbers.}
 }
 \value{
 String vector of ten digits. Values that do not conform are converted to NA.

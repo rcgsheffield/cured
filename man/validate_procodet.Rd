@@ -7,9 +7,9 @@
 validate_procodet(procodet_in, procodet_sender)
 }
 \arguments{
-\item{prodocdet_in}{Prodocdet input}
+\item{procodet_in}{Prodocdet input}
 
-\item{prodocdet_sender}{Value to replace missing observations or when the length of the code is neither 3 nor 5.}
+\item{procodet_sender}{Value to replace missing observations or when the length of the code is neither 3 nor 5.}
 }
 \value{
 Tidied prodocdet of length 3 characters with no missing values.
