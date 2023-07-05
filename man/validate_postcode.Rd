@@ -6,6 +6,12 @@
 \usage{
 validate_postcode(postcode)
 }
+\arguments{
+\item{postcode}{String vector of postcodes.}
+}
+\value{
+String vector of tidied postcodes.
+}
 \description{
-Tidies Postcode
+Formats postcode correctly ensuring all characters are uppercase and incorrect values as NA
 }

@@ -4,7 +4,13 @@
 \alias{remove_blanks}
 \title{Trim white-space from variable.}
 \usage{
-remove_blanks(field)
+remove_blanks(x)
+}
+\arguments{
+\item{x}{String vector to have white space trimmed.}
+}
+\value{
+String vector with white spaces trimmed and blanks converted to NA
 }
 \description{
 Trim white-space from variable.

@@ -2,10 +2,18 @@
 % Please edit documentation in R/cleaning.R
 \name{validate_numeric}
 \alias{validate_numeric}
-\title{Tidies numerical values}
+\title{Validates numerical values}
 \usage{
-validate_numeric(field_in, len)
+validate_numeric(x, len)
+}
+\arguments{
+\item{x}{Vector of numerical values.}
+
+\item{len}{Length entries are meant to be.}
+}
+\value{
+String vector of numbers left-padded with zero. Missing values are '9' repeated the value of 'len'.
 }
 \description{
-Tidies numerical values
+Validates numerical values
 }

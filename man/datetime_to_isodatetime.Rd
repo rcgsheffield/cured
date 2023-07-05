@@ -4,7 +4,15 @@
 \alias{datetime_to_isodatetime}
 \title{Converts datetime to iso datetime.}
 \usage{
-datetime_to_isodatetime(in_times, format_type)
+datetime_to_isodatetime(x, format_type)
+}
+\arguments{
+\item{x}{String vector of date-times to be converted.}
+
+\item{format_type}{Format of date-times.}
+}
+\value{
+Vector of dates in ISO-8601 format.
 }
 \description{
 Converts datetime to iso datetime.

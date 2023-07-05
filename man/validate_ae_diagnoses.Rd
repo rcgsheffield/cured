@@ -6,6 +6,12 @@
 \usage{
 validate_ae_diagnoses(diags)
 }
+\arguments{
+\item{diags}{Vector of diagnoses.}
+}
+\value{
+Vector of diagnoses with values converted to upper case, missing and invalud values as NA.
+}
 \description{
 Tidies A&E Diagnoses
 }

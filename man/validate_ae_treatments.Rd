@@ -9,6 +9,9 @@ validate_ae_treatments(treats)
 \arguments{
 \item{treats}{Treatment code to tidy and validate}
 }
+\value{
+Vector of treatment codes padded with zeros and missing/invalid codes converted to NA.
+}
 \description{
 Tidies treatment codes to be strings, left padded with zeros, if not possible returns NA
 }

@@ -4,7 +4,13 @@
 \alias{remove_whitespace}
 \title{Remove white spaces from strings}
 \usage{
-remove_whitespace(text_vector)
+remove_whitespace(x)
+}
+\arguments{
+\item{x}{String vector to tidy}
+}
+\value{
+String vector with carriage returns removed, white space trimmed and missing ("") values as NA.
 }
 \description{
 Remove white spaces from strings

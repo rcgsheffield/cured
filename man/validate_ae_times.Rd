@@ -4,8 +4,16 @@
 \alias{validate_ae_times}
 \title{Tidies A&E Times}
 \usage{
-validate_ae_times(time_in, invalid_code)
+validate_ae_times(x, invalid_code)
+}
+\arguments{
+\item{x}{String vector of times.}
+
+\item{invalid_code}{Code to use for invalid values.}
+}
+\value{
+Vector of times correctly formatted.
 }
 \description{
-T
+Tidies A&E times, converting 2400 to 0000 and replacing invalid values with the specified code.
 }

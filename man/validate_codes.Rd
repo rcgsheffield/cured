@@ -13,6 +13,9 @@ validate_codes(field_in, valid_codes, invalid_code)
 
 \item{invalid_codes}{Invalid code to replace values not observed in valid_codes with.}
 }
+\value{
+Vector of codes wher values not in valid_codes are replaced with invalid_code.
+}
 \description{
 Replaces missing and codes that are not valid with the invalid code value.
 }

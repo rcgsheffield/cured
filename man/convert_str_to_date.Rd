@@ -4,7 +4,15 @@
 \alias{convert_str_to_date}
 \title{Convert date from string to date}
 \usage{
-convert_str_to_date(date_in, dt_format = "\%Y-\%m-\%d")
+convert_str_to_date(date, dt_format = "\%Y-\%m-\%d")
+}
+\arguments{
+\item{date}{Vector of dates as strings to be converted.}
+
+\item{dt_format}{Format of date strings.}
+}
+\value{
+Vector of dates as elapsed dates.
 }
 \description{
 Convert date from string to date

@@ -6,6 +6,9 @@
 \usage{
 split_forenames_surnames(names)
 }
+\arguments{
+\item{names}{String vector of names to be split.}
+}
 \value{
 Data Table of forename and surname.
 }

@@ -2,10 +2,10 @@
 % Please edit documentation in R/cleaning.R
 \name{validate_date_times}
 \alias{validate_date_times}
-\title{Tidites Datetimes to POSIX values}
+\title{Tidies Datetimes to POSIX values}
 \usage{
 validate_date_times(
-  datetime_in,
+  x,
   invalid_code,
   start_date_time,
   finish_date_time,
@@ -13,12 +13,19 @@ validate_date_times(
 )
 }
 \arguments{
+\item{x}{Vector of date-time as strings to convert.}
+
+\item{invalid_code}{Value to replace invalid codes with.}
+
 \item{start_date_time}{The first date from which values are valid, anything before this is converted to NA.}
 
 \item{finish_date_time}{The last date from which values are valid, anything after this is converted to NA.}
 
 \item{missing_date_time}{String representation of date/time that should be considered missing, such values are
 converted to NA.}
+}
+\value{
+Vector of dates converted to YYYY-MM-DD HH:MM:SS.
 }
 \description{
 Converts date-times as strings to elapsed POSIX values. This is required so that elapsed periods can be calculated.

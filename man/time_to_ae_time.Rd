@@ -4,7 +4,15 @@
 \alias{time_to_ae_time}
 \title{Convert times of arrival at A&E}
 \usage{
-time_to_ae_time(in_times, format_type)
+time_to_ae_time(x, format_type)
+}
+\arguments{
+\item{x}{String vector of date-time or time to be converted.}
+
+\item{format_type}{Format of date-time/time.}
+}
+\value{
+String vector of just times
 }
 \description{
 Convert times of arrival at A&E

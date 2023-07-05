@@ -4,10 +4,15 @@
 \alias{validate_gp_prac}
 \title{Tidies GP Practice code to upper-case.}
 \usage{
-validate_gp_prac(field_in, invalid_code)
+validate_gp_prac(x, invalid_code)
 }
 \arguments{
-\item{invalid_code}{Code to indicate invalid or NA value.}
+\item{x}{Vector of GP practice codes.}
+
+\item{invalid_code}{String code to indicate invalid or NA value.}
+}
+\value{
+Vector of GP practice codes converted to upper case, missing values are invalid_code.
 }
 \description{
 Converts GP Practice codes to upper case and replaces those that do not conform or are missing with an invalid code.

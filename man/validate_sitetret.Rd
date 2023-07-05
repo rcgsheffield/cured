@@ -4,7 +4,15 @@
 \alias{validate_sitetret}
 \title{Tidies Site Treatment codes to upper-case}
 \usage{
-validate_sitetret(sitetret_in, procodet)
+validate_sitetret(site_treatment_code, procodet)
+}
+\arguments{
+\item{site_treatment_code}{Vector of site treatment codes.}
+
+\item{procodet}{The procodet to check against.}
+}
+\value{
+String vector of upper case Site Treatment codes. Missing values
 }
 \description{
 Converts Site Treatment codes to upper case and replaces those that do not conform or are missing with an invalid

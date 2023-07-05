@@ -4,7 +4,15 @@
 \alias{time_to_isotime}
 \title{Convert times to standardised strings.}
 \usage{
-time_to_isotime(in_times, format_type)
+time_to_isotime(x, format_type)
+}
+\arguments{
+\item{x}{Vector of times to convert.}
+
+\item{format_type}{Format times take}
+}
+\value{
+Vector of standardised times as string formatted as HH:MM:SS
 }
 \description{
 Convert times to standardised strings.

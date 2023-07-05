@@ -13,6 +13,9 @@ validate(field_in, start_date, finish_date)
 
 \item{finish_date}{The last date from which values are valid, anything after this is converted to NA.}
 }
+\value{
+Vector of dates tidied.
+}
 \description{
-Replaces "1900-01-01" with NA and anything <
+Replaces "1900-01-01" with NA and anything < "188-01-01" or > "2017-03-31" as NA.
 }

@@ -6,6 +6,14 @@
 \usage{
 validate_opcs_ops(ops_wide, invalid_date_code)
 }
+\arguments{
+\item{ops_wide}{OPCS Data in wide format.}
+
+\item{invalid_date_code}{Code to use for invalid dates.}
+}
+\value{
+Data table of tidied formats in upper case with missing dates replaced.
+}
 \description{
 Tidies OPCSOps codes
 }

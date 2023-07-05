@@ -4,7 +4,13 @@
 \alias{clean_names}
 \title{Tidies Names}
 \usage{
-clean_names(name_in)
+clean_names(name)
+}
+\arguments{
+\item{name}{String vector of names to be cleaned.}
+}
+\value{
+String vector of names in upper case with white space trimmed.
 }
 \description{
 Replaces multiple white-spaces with single white space and converts characters to upper case.

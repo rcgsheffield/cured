@@ -13,6 +13,9 @@ remove_values(field, values_to_remove, case_sensitive = FALSE)
 
 \item{case_sensitive}{Boolean whether to make search case-sensitive or not.}
 }
+\value{
+Vector with values_to_remove converted to NA.
+}
 \description{
 Removes some values
 }

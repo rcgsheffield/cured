@@ -6,6 +6,12 @@
 \usage{
 validate_ae_investigations(invests)
 }
+\arguments{
+\item{invests}{Vector of investigation codes.}
+}
+\value{
+Vector of investigation codes padded with zeros and missing/invalid codes converted to NA.
+}
 \description{
 Ensures A&E Investigation codes are strings of two characters left-padded with two leading zeros.
 }
