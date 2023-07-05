@@ -24,13 +24,17 @@
     },
     {
       "@type": "Person",
-      "givenName": ["Tony", "t.stone@sheffield.ac.uk"],
-      "familyName": "Stone"
+      "givenName": "Tony",
+      "familyName": "Stone",
+      "email": "t.stone@sheffield.ac.uk",
+      "@id": "https://orcid.org/0000-0002-0167-3800"
     },
     {
       "@type": "Person",
-      "givenName": ["Annabel", "a.crumb@sheffield.ac.uk"],
-      "familyName": "Crumb"
+      "givenName": "Annabel",
+      "familyName": "Crumb",
+      "email": "a.crumb@sheffield.ac.uk",
+      "@id": "https://orcid.org/0000-0001-9310-8536"
     }
   ],
   "maintainer": [
@@ -143,5 +147,5 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "54.983KB"
+  "fileSize": "55.076KB"
 }
