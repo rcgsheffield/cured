@@ -19,9 +19,9 @@ Imports:
     data.table,
     dplyr,
     dtplyr,
-    duckdb,
     IMD,
     lubridate,
+    nhsnumber,
     stringr
 Suggests:
     codemetar

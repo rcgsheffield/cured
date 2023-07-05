@@ -1,6 +1,7 @@
 ---
 output: github_document
 ---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
@@ -17,7 +18,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-# CUREd
+# cuRed
 
 An R package for working with CUREd data. This package handles the ingress of data and linking between the different data sources.
 
@@ -34,7 +35,6 @@ devtools::install_github("CUREd-Plus/cuRed")
 ## Usage
 
 **TODO** Add usage once we have code to work with!
-
 
 ## Development and Contributing
 
