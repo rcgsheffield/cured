@@ -51,6 +51,10 @@ the package meets the common standards prescribed for package
 development and passes linting with [styler](https://styler.r-lib.org/)
 and [lintr](https://lintr.r-lib.org/).
 
+If you are unfamiliar working with Git and GitHub with R then you may
+find [Happy Git and GitHub for the useR](https://happygitwithr.com/) a
+useful resource.
+
 #### Cloning the Repository
 
 If you are a member of the the [CUREd-Plus
