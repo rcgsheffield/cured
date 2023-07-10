@@ -297,7 +297,7 @@ validate_codes <- function(field_in, valid_codes, invalid_code) {
 #' @param finish_date The last date from which values are valid, anything after this is converted to NA.
 #' @returns Vector of dates tidied.
 #' @export
-validate <- dates <- function(field_in, start_date, finish_date) {
+validate_dates <- function(field_in, start_date, finish_date) {
   date_out <- replace(field_in, field_in %in% "1900-01-01", NA)
   date_converted <- lubridate::fast_strptime(date_out, format = "%Y-%m-%d", tz = "Europe/London", lt = FALSE)
   return(replace(date_out, !is.na(field_in) &
@@ -682,7 +682,7 @@ validate_ae_treatments <- function(treats) {
 #' @param ref_time Reference time point, typically date of birth
 #' @returns String vector of ages, rounded down
 #' @export
-calc <- age <- function(point_time, ref_time) {
+calc_age <- function(point_time, ref_time) {
   age <- floor(lubridate::time_length(
     difftime(
       as.Date(point_time,
