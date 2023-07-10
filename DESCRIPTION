@@ -8,7 +8,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-8301-6857")),
     person(given="Tony", family="Stone", email="t.stone@sheffield.ac.uk", role = c("aut"),
            comment = c(ORCID = "0000-0002-0167-3800")),
-    person(given="Annabel", family="Crumb", email="a.crumb@sheffield.ac.uk", role = c("aut"),
+    person(given="Annabel", family="Crum", email="a.crum@sheffield.ac.uk", role = c("aut"),
            comment = c(ORCID = "0000-0001-9310-8536")))
 Description: Package for cleaning and linking data provisioned by NHS Digital, Yorkshire Ambulance Service and other Unexpected Emergency Care (UEC) services along with medicine dispensery data.
 License: MIT + file LICENSE

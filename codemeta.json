@@ -32,8 +32,8 @@
     {
       "@type": "Person",
       "givenName": "Annabel",
-      "familyName": "Crumb",
-      "email": "a.crumb@sheffield.ac.uk",
+      "familyName": "Crum",
+      "email": "a.crum@sheffield.ac.uk",
       "@id": "https://orcid.org/0000-0001-9310-8536"
     }
   ],
@@ -147,5 +147,5 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "71.451KB"
+  "fileSize": "71.623KB"
 }
