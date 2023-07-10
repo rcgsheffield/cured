@@ -6,7 +6,7 @@ library(lubridate)
 #' @param in_date Input date
 #' @param format_type Input format, should be one of "yyyy-mm-dd", "yyyymmdd" or
 #' "dd/mm/yyyy"
-#' @returns String vector of dates fromatted as yyyy-mm-dd
+#' @returns String vector of dates formatted as yyyy-mm-dd
 #' @export
 #' @examples
 #' dates <- c("01/02/1999", "03/04/2001")
@@ -446,14 +446,15 @@ validate_gp_prac <- function(x, invalid_code) {
   ))
 }
 
-#' Tidies Referer organisation code to upper-case.
+#' Tidies Referrer organisation code to upper-case.
 #'
-#' Converts Referer organisation codes to upper case and replaces those that do not conform or are missing with an
-#' invalid code.
+#' Converts Referrer organisation codes to upper case and replaces those that do not conform or are missing with
+#' an invalid code.
 #'
-#' @param x Vector of referer organisation codes.
+#' @param x Vector of Referrer organisation codes.
 #' @param invalid_code String code to indicate invalid or NA value.
-#' @returns Vector of referer organisation as upper case strings, missing and invalid values replaced with invalid_code.
+#' @returns Vector of Referrer organisation as upper case strings, missing and invalid values replaced with
+#' invalid_code.
 #' @export
 validate_refer_org <- function(x, invalid_code) {
   field_out <- toupper(x)

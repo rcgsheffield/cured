@@ -2,19 +2,20 @@
 % Please edit documentation in R/cleaning.R
 \name{validate_refer_org}
 \alias{validate_refer_org}
-\title{Tidies Referer organisation code to upper-case.}
+\title{Tidies Referrer organisation code to upper-case.}
 \usage{
 validate_refer_org(x, invalid_code)
 }
 \arguments{
-\item{x}{Vector of referer organisation codes.}
+\item{x}{Vector of Referrer organisation codes.}
 
 \item{invalid_code}{String code to indicate invalid or NA value.}
 }
 \value{
-Vector of referer organisation as upper case strings, missing and invalid values replaced with invalid_code.
+Vector of Referrer organisation as upper case strings, missing and invalid values replaced with
+invalid_code.
 }
 \description{
-Converts Referer organisation codes to upper case and replaces those that do not conform or are missing with an
-invalid code.
+Converts Referrer organisation codes to upper case and replaces those that do not conform or are missing with
+an invalid code.
 }
