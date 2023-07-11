@@ -2,6 +2,8 @@ analyse
 args
 aut
 BugReports
+cff
+cffinit
 CMD
 codebase
 codemeta
@@ -38,6 +40,7 @@ linter
 linters
 lintr
 lubridate
+ly
 macos
 MERCHANTABILITY
 miniconda
