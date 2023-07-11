@@ -1,0 +1,139 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "cuRed",
+  "description": "Package for cleaning and linking Urgent and Emergency Care (UEC) service data, provisioned by NHS Digital and Yorkshire Ambulance Service, along with data on demographics, deaths, and medicines dispensed in primary care.",
+  "name": "cuRed: Linking Urgent and Emergency Care Data in Yorkshire and Humber Region and Nationwide",
+  "codeRepository": "https://github.com/CUREd-Plus/cuRed",
+  "issueTracker": "https://github.com/CUREd-Plus/cuRed/issues",
+  "license": "https://spdx.org/licenses/MIT",
+  "version": "0.0.0.9000",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R version 4.3.1 (2023-06-16)",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Neil",
+      "familyName": "Shephard",
+      "email": "n.shephard@sheffield.ac.uk",
+      "@id": "https://orcid.org/0000-0001-8301-6857"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Tony",
+      "familyName": "Stone",
+      "email": "tony.stone@sheffield.ac.uk",
+      "@id": "https://orcid.org/0000-0002-0167-3800"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Annabel",
+      "familyName": "Crum",
+      "email": "a.crum@sheffield.ac.uk",
+      "@id": "https://orcid.org/0000-0001-9310-8536"
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Neil",
+      "familyName": "Shephard",
+      "email": "n.shephard@sheffield.ac.uk",
+      "@id": "https://orcid.org/0000-0001-8301-6857"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "codemetar",
+      "name": "codemetar",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=codemetar"
+    }
+  ],
+  "softwareRequirements": {
+    "1": {
+      "@type": "SoftwareApplication",
+      "identifier": "data.table",
+      "name": "data.table",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=data.table"
+    },
+    "2": {
+      "@type": "SoftwareApplication",
+      "identifier": "dplyr",
+      "name": "dplyr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=dplyr"
+    },
+    "3": {
+      "@type": "SoftwareApplication",
+      "identifier": "dtplyr",
+      "name": "dtplyr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=dtplyr"
+    },
+    "4": {
+      "@type": "SoftwareApplication",
+      "identifier": "IMD",
+      "name": "IMD",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=IMD"
+    },
+    "5": {
+      "@type": "SoftwareApplication",
+      "identifier": "lubridate",
+      "name": "lubridate",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=lubridate"
+    },
+    "6": {
+      "@type": "SoftwareApplication",
+      "identifier": "stringr",
+      "name": "stringr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=stringr"
+    },
+    "SystemRequirements": null
+  },
+  "fileSize": "71.614KB"
+}
