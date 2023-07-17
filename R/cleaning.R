@@ -282,7 +282,7 @@ validate_postcode <- function(postcode) {
 #' @param field_in Variable to be validated.
 #' @param valid_codes List of valid codes.
 #' @param invalid_code Invalid code to replace values not observed in valid_codes with.
-#' @returns Vector of codes wher values not in valid_codes are replaced with invalid_code.
+#' @returns Vector of codes where values not in valid_codes are replaced with invalid_code.
 #' @export
 validate_codes <- function(field_in, valid_codes, invalid_code) {
   return(replace(field_in, (!is.na(field_in) & !(field_in %in% valid_codes)), invalid_code))
@@ -290,7 +290,7 @@ validate_codes <- function(field_in, valid_codes, invalid_code) {
 
 #' Tidies dates
 #'
-#' Replaces "1900-01-01" with NA and anything < "188-01-01" or > "2017-03-31" as NA.
+#' Replaces "1900-01-01" with NA and anything < "1888-01-01" or > "2023-03-31" as NA.
 #'
 #' @param field_in Date variable to tidy.
 #' @param start_date The first date from which values are valid, anything before this is converted to NA.
@@ -303,7 +303,7 @@ validate_dates <- function(field_in, start_date, finish_date) {
   return(replace(date_out, !is.na(field_in) &
     (is.na(date_converted) |
       date_converted < as.POSIXct(start_date, tz = "Europe/London") |
-      date_converted > as.POSIXct(finis_date, tz = "Europe/London")), NA))
+      date_converted > as.POSIXct(finish_date, tz = "Europe/London")), NA))
 }
 
 #' Tidies Datetimes to POSIX values
