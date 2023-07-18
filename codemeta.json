@@ -14,38 +14,6 @@
     "url": "https://r-project.org"
   },
   "runtimePlatform": "R version 4.3.1 (2023-06-16)",
-  "author": [
-    {
-      "@type": "Person",
-      "givenName": "Neil",
-      "familyName": "Shephard",
-      "email": "n.shephard@sheffield.ac.uk",
-      "@id": "https://orcid.org/0000-0001-8301-6857"
-    },
-    {
-      "@type": "Person",
-      "givenName": "Tony",
-      "familyName": "Stone",
-      "email": "tony.stone@sheffield.ac.uk",
-      "@id": "https://orcid.org/0000-0002-0167-3800"
-    },
-    {
-      "@type": "Person",
-      "givenName": "Annabel",
-      "familyName": "Crum",
-      "email": "a.crum@sheffield.ac.uk",
-      "@id": "https://orcid.org/0000-0001-9310-8536"
-    }
-  ],
-  "maintainer": [
-    {
-      "@type": "Person",
-      "givenName": "Neil",
-      "familyName": "Shephard",
-      "email": "n.shephard@sheffield.ac.uk",
-      "@id": "https://orcid.org/0000-0001-8301-6857"
-    }
-  ],
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
@@ -135,5 +103,6 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "71.663KB"
+  "fileSize": "134.631KB",
+  "contIntegration": "https://github.com/CUREd-Plus/cuRed/actions/workflows/R-CMD-check.yaml"
 }
