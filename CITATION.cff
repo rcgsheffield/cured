@@ -23,6 +23,11 @@ authors:
     email: a.crum@sheffield.ac.uk
     affiliation: The University of Sheffield
     orcid: 'https://orcid.org/0000-0001-9310-8536'
+  - given-names: Richard
+    family-names: Campbell
+    email: r.j.campbell@sheffield.ac.uk"
+    affiliation: The University of Sheffield
+    orcid: 'https://orcid.org/0000-0002-0975-9270'
 repository-code: 'https://github.com/CUREd-Plus/cuRed'
 abstract: >-
   Package for cleaning, validating, and linking NHS Digital
