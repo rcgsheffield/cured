@@ -13,15 +13,16 @@
 run_workflow <- function(data_set_id, root_directry) {
   # TODO
   # Parse the TOS
-  tos_path = "/path/to/TOS.xlsx"
+  tos_path = file.path("/path/to/TOS.xlsx")
   # Get data types for each column
   metadata <- parse_tos(tos_path)
 
-  # Define raw data directory
-  raw_data_dir = cat(root_directory, "/", data_set_id, "01-raw")
+  # Define working directories
+  data_set_dir = file.path(root_directory, "/", data_set_id)
+  raw_data_dir = file.path(data_set_dir, "/01-raw")
 
   # Convert to binary format
-  staging_dir <- csv_to_binary_format(raw_data_dir, metadata)
+  staging_dir <- csv_to_binary(raw_data_dir, metadata)
 
   # Validate
   validate(staging_dir, metadata)
