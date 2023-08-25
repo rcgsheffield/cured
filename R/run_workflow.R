@@ -21,6 +21,8 @@ run_workflow <- function(data_set_id, root_directry) {
 
   # Cleaning
 
+  # Generate metadata (column names, data types, descriptions)
+
   # Data quality rules (Flag "bad" records)
 
   # Generate data quality report
