@@ -14,12 +14,16 @@ library(cli)
 #' https://rmoff.net/2023/03/14/quickly-convert-csv-to-parquet-with-duckdb
 #'
 #' @param raw_data_dir String. Path. The directory that contains the raw data files.
+#' @param output_data_dir String. Path. The directory the output data file(s) should be written to.
 #' @param metadata List. Dictionary containing the column definitions.
-csv_to_binary <- function(raw_data_dir, metadata) {
-  csv_to_parquet(raw_data_dir, metadata)
+csv_to_binary <- function(...) {
+  csv_to_parquet(...)
 }
 
 csv_to_parquet <- function(raw_data_dir, output_data_dir, metadata) {
+  
+  cli::cli_alert_info("Converting from CSV to parquet")
+  cli::cli_alert_info("Reading path {raw_data_dir}")
   
   # Define paths
   input_glob <- file.path(raw_data_dir, "*.csv")
@@ -28,24 +32,25 @@ csv_to_parquet <- function(raw_data_dir, output_data_dir, metadata) {
   # Create an in-memory database connection
   con <- dbConnect(duckdb::duckdb(), dbdir = ":memory:")
   
+  # Ensure output directory exists
+  dir.create(output_data_dir, recursive = TRUE)
+  
   # Convert file format
   # Load the CSV file and save to Apache Parquet format.
-  # DuckDB documentation "CSV Loading"
+  # DuckDB documentation "CSV Loading":
   # https://duckdb.org/docs/data/csv/overview.html
   # TODO interpret data types
-  query <- stringr::str_interp("
+  # DuckDB COPY statement documentation:
+  # https://duckdb.org/docs/sql/statements/copy
+  query <- stringr::str_glue("
     COPY (
       SELECT *
-      FROM  read_csv_auto('{input_glob}',
-              all_varchar=TRUE)
-    ) TO '{output_path}' (FORMAT 'PARQUET', CODEC 'ZSTD', OVERWRITE_OR_IGNORE);",
-      list(input_glob=input_glob, output_path=output_path))
-  
+      FROM  read_csv_auto('{input_glob}', all_varchar=TRUE)
+    ) TO '{output_path}'
+      WITH (FORMAT 'PARQUET');")
   cli::cli_alert_info(query)
   
   # Run the query
   affected_rows_count <- DBI::dbExecute(con, query)
-  
-  cli::cli_alert_info(sprintf("%s rows affected", affected_rows_count))
-
+  cli::cli_alert_info("{affected_rows_count} rows affected")
 }
