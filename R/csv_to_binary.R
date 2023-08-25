@@ -22,7 +22,7 @@ csv_to_binary <- function(raw_data_dir, metadata) {
 csv_to_parquet <- function(raw_data_dir, output_data_dir, metadata) {
   
   # Define paths
-  raw_data_glob <- file.path(raw_data_dir, "*.csv")
+  input_glob <- file.path(raw_data_dir, "*.csv")
   output_path <- file.path(output_data_dir, "data.parquet")
   
   # Create an in-memory database connection
@@ -39,7 +39,7 @@ csv_to_parquet <- function(raw_data_dir, output_data_dir, metadata) {
       FROM  read_csv_auto('{input_glob}',
               all_varchar=TRUE)
     ) TO '{output_path}' (FORMAT 'PARQUET', CODEC 'ZSTD', OVERWRITE_OR_IGNORE);",
-      list(input_glob=raw_data_glob, output_path=output_path))
+      list(input_glob=input_glob, output_path=output_path))
   
   cli::cli_alert_info(query)
   
