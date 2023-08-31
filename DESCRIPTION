@@ -23,6 +23,7 @@ Imports:
     dtplyr,
     IMD,
     lubridate,
-    stringr
+    stringr,
+    jsonlite
 Suggests:
     codemetar

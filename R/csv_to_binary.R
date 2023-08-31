@@ -18,12 +18,7 @@ library(cli)
 #' @param metadata List. Dictionary containing the column definitions.
 #' 
 #' @returns String. Path. The path of the output data file.
-csv_to_binary <- function(...) {
-  csv_to_parquet(...)
-}
-
-csv_to_parquet <- function(raw_data_dir, output_data_dir, metadata) {
-  
+csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {  
   cli::cli_alert_info("Converting from CSV to parquet")
   cli::cli_alert_info("Reading path {raw_data_dir}")
   
@@ -57,4 +52,8 @@ csv_to_parquet <- function(raw_data_dir, output_data_dir, metadata) {
   cli::cli_alert_info("{affected_rows_count} rows affected")
   
   return(output_path)
+}
+
+metadata_data_types <- function(metadata) {
+
 }
