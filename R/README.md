@@ -8,4 +8,5 @@ flowchart TD
   run_workflow --> parse_tos("metadata.R::parse_tos()")
   parse_tos --> csv_to_binary_format("csv_to_binary.R::csv_to_binary_format()")
   csv_to_binary_format --> validate("validate.R::validate()")
+  validate --> etc["Etc."]
 ```
