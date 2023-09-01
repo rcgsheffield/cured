@@ -24,6 +24,8 @@ Imports:
     IMD,
     lubridate,
     stringr,
-    jsonlite
+    jsonlite,
+    DBI,
+    duckdb
 Suggests:
     codemetar
