@@ -22,25 +22,21 @@ library(cli)
 #' @returns String. Path. The path of the output data file.
 csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {  
   cli::cli_alert_info("Converting from CSV to parquet...")
-  cli::cli_alert_info("Reading path '{raw_data_dir}'")
-  
-  # Define paths
-  input_glob <- file.path(raw_data_dir, "*.csv")
-  metadata_path <- file.path(raw_data_dir, "metadata.json")
-  sql_query_file_path <- file.path(output_data_dir, "query.sql")
-  output_path <- file.path(output_data_dir, "data.parquet")
 
-  # Create an in-memory database connection
-  con <- dbConnect(duckdb::duckdb(), dbdir = ":memory:")
-  
-  # Ensure output directory exists
-  dir.create(output_data_dir, recursive = TRUE)
-  
+  # Define the absolute paths
+  input_glob <- normalizePath(file.path(raw_data_dir, "*.csv"), mustWork = FALSE)
+  metadata_path <- normalizePath(file.path(raw_data_dir, "metadata.json"), mustWork = FALSE)
+  sql_query_file_path <- normalizePath(file.path(output_data_dir, "query.sql"), mustWork = FALSE)
+  output_path <- normalizePath(file.path(output_data_dir, "data.parquet"), mustWork = FALSE)
+
   # Get data types
   cli::cli_alert_info("Loading '{metadata_path}'")
   metadata <- jsonlite::fromJSON(metadata_path)
   data_types <- get_data_types(metadata)
   data_types_struct <- convert_json_to_struct(jsonlite::toJSON(data_types))
+  
+  # Ensure output directory exists
+  dir.create(output_data_dir, recursive = TRUE)
 
   # Convert file format
   # Load the CSV file and save to Apache Parquet format.
@@ -68,6 +64,11 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
   writeLines(query, fileConn)
   close(fileConn)
   cli::cli_alert_info("Wrote '{sql_query_file_path}'")
+  
+  # Create an in-memory database connection
+  con <- dbConnect(duckdb::duckdb(), dbdir = ":memory:")
+  
+  cli::cli_alert_info("Reading input data from '{input_glob}'...")
   
   # Run the query
   affected_rows_count <- DBI::dbExecute(con, query)
