@@ -40,19 +40,19 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
 
   # Convert file format
   # Load the CSV file and save to Apache Parquet format.
-  # DuckDB documentation "CSV Loading":
-  # https://duckdb.org/docs/data/csv/overview.html
-
-  # DuckDB COPY statement documentation:
-  # https://duckdb.org/docs/sql/statements/copy
-  
   # Build SQL query
   query <- stringr::str_glue("
     -- Convert CSV files to Apache Parquet format
+    -- DuckDB COPY statement documentation
+    -- https://duckdb.org/docs/sql/statements/copy
     COPY (
       SELECT *
       -- Define data types
+      -- DuckDB documentation for CSV loading
+      -- https://duckdb.org/docs/data/csv/overview.html
       FROM read_csv('{input_glob}',
+        header=TRUE,
+        filename=TRUE,
         columns={data_types_struct}
       )
     ) 
