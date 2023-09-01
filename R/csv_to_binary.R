@@ -60,7 +60,7 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
 #' 
 #' {field_name: field['data_type'] for field_name, field in metadata.items()}
 #' 
-#' @param metadata Named list. The keys are the field names. For example:
+#' @param metadata Nested dictionary. The keys are the field names. For example:
 #' {
 #   "FYEAR":{
 #'    "format": "String(4)",
@@ -75,7 +75,7 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
 #'   "data_type":"VARCHAR(19)"
 #' }
 #' 
-#' @returns Named list. Map of field names to data types. For example:
+#' @returns Dictionary. Map of field names to data types. For example:
 #' {
 #'   "FYEAR": "VARCHAR(4)",
 #'   "PARTYEAR": "INT",
@@ -86,9 +86,11 @@ metadata_data_types <- function(metadata) {
   
   field_names = list()
   
+  # Iterate over list items
   for (field_name in names(metadata)) {
     field <- metadata[[field_name]]
     
+    # Build new dictionary
     field_names[field_name] = field$data_type
   }
   
