@@ -21,12 +21,13 @@ library(cli)
 #' 
 #' @returns String. Path. The path of the output data file.
 csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {  
-  cli::cli_alert_info("Converting from CSV to parquet")
-  cli::cli_alert_info("Reading path {raw_data_dir}")
+  cli::cli_alert_info("Converting from CSV to parquet...")
+  cli::cli_alert_info("Reading path '{raw_data_dir}'")
   
   # Define paths
   input_glob <- file.path(raw_data_dir, "*.csv")
   metadata_path <- file.path(raw_data_dir, "metadata.json")
+  sql_query_file_path <- file.path(output_data_dir, "query.sql")
   output_path <- file.path(output_data_dir, "data.parquet")
 
   # Create an in-memory database connection
@@ -40,9 +41,7 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
   metadata <- jsonlite::fromJSON(metadata_path)
   data_types <- get_data_types(metadata)
   data_types_struct <- convert_json_to_struct(jsonlite::toJSON(data_types))
-  
-  cli::cli_alert_info("{data_types_struct}")
-  
+
   # Convert file format
   # Load the CSV file and save to Apache Parquet format.
   # DuckDB documentation "CSV Loading":
@@ -57,10 +56,18 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
     COPY (
       SELECT *
       -- Define data types
-      FROM  read_csv('{input_glob}', columns={data_types_struct})
-    ) TO '{output_path}'
-      WITH (FORMAT 'PARQUET');")
-  cli::cli_alert_info(query)
+      FROM read_csv('{input_glob}',
+        columns={data_types_struct}
+      )
+    ) 
+    TO '{output_path}'
+    WITH (FORMAT 'PARQUET');")
+  
+  # Write SQL query to text file
+  fileConn <- file(sql_query_file_path)
+  writeLines(query, fileConn)
+  close(fileConn)
+  cli::cli_alert_info("Wrote '{sql_query_file_path}'")
   
   # Run the query
   affected_rows_count <- DBI::dbExecute(con, query)
