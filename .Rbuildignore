@@ -14,3 +14,4 @@
 ^\.lintr$
 ^CONTRIBUTING.md$
 ^venv$
+^R\\README.md$
