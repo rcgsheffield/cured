@@ -8,8 +8,6 @@
 #'
 #' @param data_set_id String. Data set identifier e.g. "apc" or "op"
 #' @param root_directry String. The root directory that contains all the data.
-#' @examples
-#' run_workflow("ae", "/mnt/data/cured")
 run_workflow <- function(data_set_id, root_directry) {
   # TODO
   # Parse the TOS

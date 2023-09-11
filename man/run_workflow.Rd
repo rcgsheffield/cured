@@ -17,6 +17,3 @@ run_workflow(data_set_id, root_directry)
 \details{
 TODO
 }
-\examples{
-run_workflow("ae", "/mnt/data/cured")
-}

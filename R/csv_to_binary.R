@@ -77,11 +77,9 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
 
 #' Get the data type for each field from the metadata document.
 #' 
-#' @description  
-#' 
 #' This is the equivalent of this dictionary comprehension in Python:
 #' 
-#' {field_name: field['data_type'] for field_name, field in metadata.items()}
+#' {field_name: field["data_type"] for field_name, field in metadata.items()}
 #' 
 #' metadata <- {
 #'   "FYEAR": {
@@ -92,7 +90,7 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
 #'    "format": "Number",
 #'    "data_type": "INT"
 #'  },
-#'  "EPIKEY":{
+#'  "EPIKEY": {
 #'    "format": "String(19)",
 #'    "data_type": "VARCHAR(19)"
 #' }
@@ -102,11 +100,11 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
 #' {
 #'   "FYEAR": "VARCHAR(4)",
 #'   "PARTYEAR": "INT",
-#'   "EPIKEY": "VARCHAR(19)",
+#'   "EPIKEY": "VARCHAR(19)"
 #' }
 #' 
-#' @param metadata Nested dictionary. The keys are the field names. For example:
-#' @returns Dictionary. Map of field names to data types. For example:
+#' @param metadata Nested dictionary. The keys are the field names.
+#' @returns Dictionary. Map of field names to data types.
 #' 
 get_data_types <- function(metadata) {
   
