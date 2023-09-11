@@ -13,10 +13,8 @@ library(cli)
 #' Example: "Quickly Convert CSV to Parquet with DuckDB"
 #' https://rmoff.net/2023/03/14/quickly-convert-csv-to-parquet-with-duckdb
 #'
-#' @param raw_data_dir String. Path. The directory that contains the raw data files.
-#'                     Example: "./data/01-raw/apc"
-#' @param output_data_dir String. Path. The directory the output data file(s) should be written to.
-#'                        Example: "./data/02-staging/apc"
+#' @param raw_data_dir String. Path. The directory that contains the raw data files. Example: "./data/01-raw/apc"
+#' @param output_data_dir String. Path. The directory the output data file(s) should be written to. Example: "./data/02-staging/apc"
 #' @param metadata List. Dictionary containing the column definitions.
 #' 
 #' @returns String. Path. The path of the output data file.
@@ -79,31 +77,36 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
 
 #' Get the data type for each field from the metadata document.
 #' 
+#' @description  
+#' 
 #' This is the equivalent of this dictionary comprehension in Python:
 #' 
 #' {field_name: field['data_type'] for field_name, field in metadata.items()}
 #' 
-#' @param metadata Nested dictionary. The keys are the field names. For example:
-#' {
-#   "FYEAR":{
-#'    "format": "String(4)",
-#'    "data_type": "VARCHAR(4)"
-#  '},
-#  "PARTYEAR":{
-#'   "format":"Number",
-#'   "data_type":"INT"
+#' metadata <- {
+#'   "FYEAR": {
+#'     "format": "String(4)",
+#'     "data_type": "VARCHAR(4)"
+#' },
+#'  "PARTYEAR": {
+#'    "format": "Number",
+#'    "data_type": "INT"
 #'  },
-#  "EPIKEY":{
-#'   "format":"String(19)",
-#'   "data_type":"VARCHAR(19)"
+#'  "EPIKEY":{
+#'    "format": "String(19)",
+#'    "data_type": "VARCHAR(19)"
 #' }
 #' 
-#' @returns Dictionary. Map of field names to data types. For example:
+#' Return value:
+#' 
 #' {
 #'   "FYEAR": "VARCHAR(4)",
 #'   "PARTYEAR": "INT",
 #'   "EPIKEY": "VARCHAR(19)",
 #' }
+#' 
+#' @param metadata Nested dictionary. The keys are the field names. For example:
+#' @returns Dictionary. Map of field names to data types. For example:
 #' 
 get_data_types <- function(metadata) {
   

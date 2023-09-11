@@ -6,17 +6,35 @@
 \usage{
 get_data_types(metadata)
 }
+\arguments{
+\item{metadata}{Nested dictionary. The keys are the field names. For example:}
+}
 \value{
 Dictionary. Map of field names to data types. For example:
+}
+\description{
+This is the equivalent of this dictionary comprehension in Python:
+
+{field_name: field\link{'data_type'} for field_name, field in metadata.items()}
+
+metadata <- {
+"format": "String(4)",
+"data_type": "VARCHAR(4)"
+},
+"PARTYEAR": {
+"format":"Number",
+"data_type":"INT"
+},
+"EPIKEY":{
+"format":"String(19)",
+"data_type":"VARCHAR(19)"
+}
+
+Return value:
+
 {
 "FYEAR": "VARCHAR(4)",
 "PARTYEAR": "INT",
 "EPIKEY": "VARCHAR(19)",
 }
-}
-\description{
-This is the equivalent of this dictionary comprehension in Python:
-}
-\details{
-{field_name: field\link{'data_type'} for field_name, field in metadata.items()}
 }

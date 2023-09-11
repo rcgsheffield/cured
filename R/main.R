@@ -8,9 +8,6 @@
 #'
 #' @param root_directory String. Path. The directory that contains all the working directories.
 #' 
-#' @examples
-#' run_workflow("ae", "/mnt/data/cured")
-#' 
 main <- function(root_directory) {
 
   # A list of the unique identifier of each of the data sets to work with.

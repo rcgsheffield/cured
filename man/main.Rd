@@ -15,7 +15,3 @@ main(root_directory)
 \details{
 TODO
 }
-\examples{
-run_workflow("ae", "/mnt/data/cured")
-
-}
