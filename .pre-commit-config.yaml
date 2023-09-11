@@ -16,13 +16,9 @@ repos:
     - id: no-debug-statement
     - id: roxygenize
       additional_dependencies:
-        -    data.table
-        -    dplyr
-        -    dtplyr
-        -    duckdb
-        -    IMD
-        -    lubridate
-        -    stringr
+        - jsonlite
+        - duckdb
+        - stringr
     - id: use-tidy-description
     - id: style-files
     - id: no-browser-statement

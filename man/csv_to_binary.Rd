@@ -7,9 +7,9 @@
 csv_to_binary(raw_data_dir, output_data_dir, metadata)
 }
 \arguments{
-\item{raw_data_dir}{String. Path. The directory that contains the raw data files. Example: "./data/01-raw/apc"}
+\item{raw_data_dir}{String. Path. The directory that contains the raw data files.}
 
-\item{output_data_dir}{String. Path. The directory the output data file(s) should be written to. Example: "./data/02-staging/apc"}
+\item{output_data_dir}{String. Path. The directory the output data file(s) should be written to.}
 
 \item{metadata}{List. Dictionary containing the column definitions.}
 }

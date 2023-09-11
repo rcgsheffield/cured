@@ -13,12 +13,12 @@ library(cli)
 #' Example: "Quickly Convert CSV to Parquet with DuckDB"
 #' https://rmoff.net/2023/03/14/quickly-convert-csv-to-parquet-with-duckdb
 #'
-#' @param raw_data_dir String. Path. The directory that contains the raw data files. Example: "./data/01-raw/apc"
-#' @param output_data_dir String. Path. The directory the output data file(s) should be written to. Example: "./data/02-staging/apc"
+#' @param raw_data_dir String. Path. The directory that contains the raw data files.
+#' @param output_data_dir String. Path. The directory the output data file(s) should be written to.
 #' @param metadata List. Dictionary containing the column definitions.
-#' 
+#'
 #' @returns String. Path. The path of the output data file.
-csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {  
+csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
   cli::cli_alert_info("Converting from CSV to parquet...")
 
   # Define the absolute paths
@@ -32,7 +32,7 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
   metadata <- jsonlite::fromJSON(metadata_path)
   data_types <- get_data_types(metadata)
   data_types_struct <- convert_json_to_struct(jsonlite::toJSON(data_types))
-  
+
   # Ensure output directory exists
   dir.create(output_data_dir, recursive = TRUE)
 
@@ -53,105 +53,74 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
         filename=TRUE,
         columns={data_types_struct}
       )
-    ) 
+    )
     TO '{output_path}'
     WITH (FORMAT 'PARQUET');")
-  
+
   # Write SQL query to text file
   fileConn <- file(sql_query_file_path)
   writeLines(query, fileConn)
   close(fileConn)
   cli::cli_alert_info("Wrote '{sql_query_file_path}'")
-  
+
   # Create an in-memory database connection
   con <- DBI::dbConnect(duckdb::duckdb(), dbdir = ":memory:")
-  
+
   cli::cli_alert_info("Reading input data from '{input_glob}'...")
-  
+
   # Run the query
   affected_rows_count <- DBI::dbExecute(con, query)
   cli::cli_alert_info("{affected_rows_count} rows affected")
-  
+
   return(output_path)
 }
 
 #' Get data types
-#' 
+#'
 #' @description
 #' Get the data type for each field from the metadata document.
-#' 
+#'
 #' @param metadata Nested dictionary. The keys are the field names.
 #' @returns Dictionary. Map of field names to data types.
-#' 
+#'
 get_data_types <- function(metadata) {
-  
-  # This is the equivalent of this dictionary comprehension in Python:
-  # 
-  # {
-  #   field_name: field["data_type"]
-  #   for field_name, field
-  #   in metadata.items()
-  # }
-  
-  # metadata <- {
-  #   "FYEAR": {
-  #     "format": "String(4)",
-  #     "data_type": "VARCHAR(4)"
-  # },
-  #  "PARTYEAR": {
-  #    "format": "Number",
-  #    "data_type": "INT"
-  #  },
-  #  "EPIKEY": {
-  #    "format": "String(19)",
-  #    "data_type": "VARCHAR(19)"
-  # }
-
   # Initialise empty dictionary
-  field_names = list()
-  
+  field_names <- list()
+
   # Iterate over list items
   for (field_name in names(metadata)) {
     field_name <- as.character(field_name)
     field <- metadata[[field_name]]
     data_type <- as.character(field$data_type)
-    
+
     # Build dictionary
     field_names[field_name] <- data_type
   }
-  
-  # Example return value:
-  # {
-  #   "FYEAR": "VARCHAR(4)",
-  #   "PARTYEAR": "INT",
-  #   "EPIKEY": "VARCHAR(19)"
-  # }
 
   return(field_names)
 }
 
 #' Convert JSON object to an SQL struct
-#' 
+#'
 #' @param data String. JSON data. The data structure is assumed to be an
 #' object (dictionary).
 convert_json_to_struct <- function(data) {
-  
   object <- jsonlite::fromJSON(data)
-  
+
   # Convert from JSON to DuckDB struct for use in  SQL queries
   # https://duckdb.org/docs/sql/data_types/struct.html
-  
+
   items <- vector()
-  
+
   # Iterate over the key-value pairs of the dictionary
   for (key in names(object)) {
     value <- object[[key]]
-    
+
     item <- stringr::str_glue("'{key}': '{value}'")
     items <- c(items, item)
   }
-  
+
   items_char <- stringr::str_flatten_comma(items)
-  struct <- stringr::str_glue("{{{items_char}}}", collapse='', sep='')
+  struct <- stringr::str_glue("{{{items_char}}}", collapse = "", sep = "")
   return(struct)
 }
