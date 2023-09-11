@@ -2,7 +2,7 @@
 % Please edit documentation in R/csv_to_binary.R
 \name{get_data_types}
 \alias{get_data_types}
-\title{Get the data type for each field from the metadata document.}
+\title{Get data types}
 \usage{
 get_data_types(metadata)
 }
@@ -13,8 +13,5 @@ get_data_types(metadata)
 Dictionary. Map of field names to data types.
 }
 \description{
-This is the equivalent of this dictionary comprehension in Python:
-}
-\details{
-
+Get the data type for each field from the metadata document.
 }

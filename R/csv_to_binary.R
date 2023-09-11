@@ -64,7 +64,7 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
   cli::cli_alert_info("Wrote '{sql_query_file_path}'")
   
   # Create an in-memory database connection
-  con <- dbConnect(duckdb::duckdb(), dbdir = ":memory:")
+  con <- DBI::dbConnect(duckdb::duckdb(), dbdir = ":memory:")
   
   cli::cli_alert_info("Reading input data from '{input_glob}'...")
   
@@ -75,39 +75,38 @@ csv_to_binary <- function(raw_data_dir, output_data_dir, metadata) {
   return(output_path)
 }
 
+#' Get data types
+#' 
+#' @description
 #' Get the data type for each field from the metadata document.
-#' 
-#' This is the equivalent of this dictionary comprehension in Python:
-#' 
-#' {field_name: field["data_type"] for field_name, field in metadata.items()}
-#' 
-#' metadata <- {
-#'   "FYEAR": {
-#'     "format": "String(4)",
-#'     "data_type": "VARCHAR(4)"
-#' },
-#'  "PARTYEAR": {
-#'    "format": "Number",
-#'    "data_type": "INT"
-#'  },
-#'  "EPIKEY": {
-#'    "format": "String(19)",
-#'    "data_type": "VARCHAR(19)"
-#' }
-#' 
-#' Return value:
-#' 
-#' {
-#'   "FYEAR": "VARCHAR(4)",
-#'   "PARTYEAR": "INT",
-#'   "EPIKEY": "VARCHAR(19)"
-#' }
 #' 
 #' @param metadata Nested dictionary. The keys are the field names.
 #' @returns Dictionary. Map of field names to data types.
 #' 
 get_data_types <- function(metadata) {
   
+  # This is the equivalent of this dictionary comprehension in Python:
+  # 
+  # {
+  #   field_name: field["data_type"]
+  #   for field_name, field
+  #   in metadata.items()
+  # }
+  
+  # metadata <- {
+  #   "FYEAR": {
+  #     "format": "String(4)",
+  #     "data_type": "VARCHAR(4)"
+  # },
+  #  "PARTYEAR": {
+  #    "format": "Number",
+  #    "data_type": "INT"
+  #  },
+  #  "EPIKEY": {
+  #    "format": "String(19)",
+  #    "data_type": "VARCHAR(19)"
+  # }
+
   # Initialise empty dictionary
   field_names = list()
   
@@ -121,6 +120,13 @@ get_data_types <- function(metadata) {
     field_names[field_name] <- data_type
   }
   
+  # Example return value:
+  # {
+  #   "FYEAR": "VARCHAR(4)",
+  #   "PARTYEAR": "INT",
+  #   "EPIKEY": "VARCHAR(19)"
+  # }
+
   return(field_names)
 }
 
