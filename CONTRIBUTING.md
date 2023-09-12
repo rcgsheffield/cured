@@ -96,7 +96,7 @@ conda install conda-forge pre-commit
 cd path/to/cloned/cuRed
 pre-commit install --install-hooks
 ```
-
+On your first commit `pre-commit` will download a virtual environment from the R [precommit package](https://github.com/lorenzwalthert/precommit) which is used to run all the configured tests. You may find the [documentation](https://lorenzwalthert.github.io/precommit/) a useful references as well as the GitHub repositories issues.
 For more an overview of `pre-commit` see the post [pre-commit:
 Protecting your future self](https://rse.shef.ac.uk/blog/pre-commit/).
 
