@@ -123,7 +123,13 @@ Please refer to this documentation for authoring R packages:
 
 # README.md
 
-To automatically generate `README.md` from the `README.Rmd` file, [use this](https://usethis.r-lib.org/) to [create README files](https://usethis.r-lib.org/reference/use_readme_rmd.html) to automatically configure pre-commit hook that helps keep these files synchronized.
+The `README.md` is automatically generated from the `README.Rmd` file, courtesy of 
+an additional pre-commit hook that is _not_ included in the `pre-commit` 
+configuration. In order to enable this hook locally you must use the  
+[usethis](https://usethis.r-lib.org/) function 
+[`user_redme_rmd()`](https://usethis.r-lib.org/reference/use_readme_rmd.html) to install the 
+pre-commit hook  (it is added to the `.git/hooks/pre-commit` file). Once run updates to
+the `README.Rmd` will, on being committed, trigger the regeneration of the `README.md`.
 
 ```R
 usethis::use_readme_rmd()
