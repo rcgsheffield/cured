@@ -115,3 +115,11 @@ Please refer to this documentation for authoring R packages:
 
 * R manual [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
 * [R Packages (2e)](https://r-pkgs.org/) by Hadley Wickham and Jennifer Bryan.
+
+# README.md
+
+To automatically generate `README.md` from the `README.Rmd` file, [use this](https://usethis.r-lib.org/) to [create README files](https://usethis.r-lib.org/reference/use_readme_rmd.html) to automatically configure pre-commit hook that helps keep these files synchronized.
+
+```R
+usethis::use_readme_rmd()
+```

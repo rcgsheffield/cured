@@ -15,3 +15,4 @@
 ^CONTRIBUTING.md$
 ^venv$
 ^R\\README.md$
+^README\.Rmd$
