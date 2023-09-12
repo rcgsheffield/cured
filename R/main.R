@@ -9,11 +9,10 @@ library(cli)
 #' TODO
 #'
 #' @param root_directory String. Path. The directory that contains all the working directories.
-#' 
+#'
 main <- function(root_directory) {
-  
   root_directry <- file.path(root_directry)
-  
+
   # Check whether the data directory exists
   if (file.exists(root_directory)) {
     cli::cli_alert_info("Root directory '{root_directory}'")
@@ -31,5 +30,4 @@ main <- function(root_directory) {
     # Run each workflow
     run_workflow(data_set_id, root_directory)
   }
-
 }
