@@ -31,7 +31,6 @@ repos:
     - id: spell-check
     - id: deps-in-desc
     - id: lintr
-    - id: pkgdown
 
 ci:
   autofix_prs: true
