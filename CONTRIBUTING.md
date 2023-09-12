@@ -102,7 +102,12 @@ Protecting your future self](https://rse.shef.ac.uk/blog/pre-commit/).
 
 ## Line endings
 
-[Configuring Git to handle line endings](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings)
+To automatically use LF line endings in RStudio, open the following menu: Tools → Code → Saving
+
+* Under "General" select "Ensure that source files end with newline"
+* Under "Serialization" set the Line ending conversion to "Posix (LF)"
+
+Git can also help with this. See: [Configuring Git to handle line endings](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings).
 
 # Writing R packages
 

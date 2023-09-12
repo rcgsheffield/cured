@@ -43,6 +43,7 @@ invalud
 iso
 issueTracker
 len
+LF
 linter
 linters
 lintr
@@ -62,6 +63,7 @@ orcid
 Organisation
 organisation
 os
+Posix
 pre
 Procodet
 procodet
@@ -72,6 +74,7 @@ rcmdcheck
 rmoff
 Roxygen
 RoxygenNote
+RStudio
 runtimePlatform
 sameAs
 sheffield
