@@ -83,7 +83,7 @@ commits are made.
 
 [pre-commit](https://pre-commit.com/) runs Git
 [hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) that
-it is configured to run on the code base prior to Git commits being
+are configured to run on the code base prior to Git commits being
 made. It is highly configurable but as it is written in Python requires
 installing in order to analyse the R code and package structure of
 `cuRed`. If you are not already familiar with Python and the various
@@ -96,7 +96,7 @@ conda install conda-forge pre-commit
 cd path/to/cloned/cuRed
 pre-commit install --install-hooks
 ```
-
+On your first commit `pre-commit` will download a virtual environment from the R [precommit package](https://github.com/lorenzwalthert/precommit) which is used to run all the configured tests. You may find the [documentation](https://lorenzwalthert.github.io/precommit/) a useful references as well as the GitHub repositories issues.
 For more an overview of `pre-commit` see the post [pre-commit:
 Protecting your future self](https://rse.shef.ac.uk/blog/pre-commit/).
 
@@ -107,6 +107,11 @@ pre-commit run --all-files
 ```
 
 ## Line endings
+
+Windows uses a different method of starting new lines known as **CRLF** 
+(**C**arriage **R**eturn **L**ine **F**eed), whilst other operating
+systems (GNU/Linux, UNIX, OSX) use just **LF**. It saves some problems 
+to be consistent in usage across development environments. Fortunately RStudio can be configured to use just **LF** when editing files.
 
 To automatically use LF line endings in RStudio, open the following menu: Tools → Code → Saving
 
@@ -124,7 +129,13 @@ Please refer to this documentation for authoring R packages:
 
 # README.md
 
-To automatically generate `README.md` from the `README.Rmd` file, [use this](https://usethis.r-lib.org/) to [create README files](https://usethis.r-lib.org/reference/use_readme_rmd.html) to automatically configure pre-commit hook that helps keep these files synchronized.
+The `README.md` is automatically generated from the `README.Rmd` file, courtesy of 
+an additional pre-commit hook that is _not_ included in the `pre-commit` 
+configuration. In order to enable this hook locally you must use the  
+[usethis](https://usethis.r-lib.org/) function 
+[`user_redme_rmd()`](https://usethis.r-lib.org/reference/use_readme_rmd.html) to install the 
+pre-commit hook  (it is added to the `.git/hooks/pre-commit` file). Once run updates to
+the `README.Rmd` will, on being committed, trigger the regeneration of the `README.md`.
 
 ```R
 usethis::use_readme_rmd()
