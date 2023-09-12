@@ -21,6 +21,7 @@ repos:
         - duckdb
         - stringr
     - id: use-tidy-description
+    # Pretty-print files with {styler} https://styler.r-lib.org/
     - id: style-files
     - id: no-browser-statement
     - id: no-debug-statement
