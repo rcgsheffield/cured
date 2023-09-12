@@ -100,6 +100,12 @@ pre-commit install --install-hooks
 For more an overview of `pre-commit` see the post [pre-commit:
 Protecting your future self](https://rse.shef.ac.uk/blog/pre-commit/).
 
+To run the pre-commits check manually, use the [pre-commit run](https://pre-commit.com/#pre-commit-run) command:
+
+```bash
+pre-commit run --all-files
+```
+
 ## Line endings
 
 To automatically use LF line endings in RStudio, open the following menu: Tools → Code → Saving
