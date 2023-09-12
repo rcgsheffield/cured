@@ -102,6 +102,11 @@ Protecting your future self](https://rse.shef.ac.uk/blog/pre-commit/).
 
 ## Line endings
 
+Windows uses a different method of starting new lines known as **CRLF** 
+(**C**arriage **R**eturn **L**ine **F**eed), whilst other operating
+systems (GNU/Linux, UNIX, OSX) use just **LF**. It saves some problems 
+to be consistent in usage across development environments. Fortunately RStudio can be configured to use just **LF** when editing files.
+
 To automatically use LF line endings in RStudio, open the following menu: Tools → Code → Saving
 
 * Under "General" select "Ensure that source files end with newline"
