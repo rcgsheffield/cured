@@ -1,4 +1,5 @@
 analyse
+apc
 api
 args
 aut
@@ -6,6 +7,7 @@ BugReports
 campbell
 cff
 cffinit
+cli
 CMD
 codebase
 codemeta
@@ -42,6 +44,8 @@ IMD
 invalud
 iso
 issueTracker
+JSON
+jsonlite
 len
 LF
 linter
@@ -87,6 +91,7 @@ softwareSuggestions
 spdx
 standardised
 stringr
+struct
 styler
 sublicense
 SystemRequirements
