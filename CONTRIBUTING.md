@@ -99,3 +99,14 @@ pre-commit install --install-hooks
 
 For more an overview of `pre-commit` see the post [pre-commit:
 Protecting your future self](https://rse.shef.ac.uk/blog/pre-commit/).
+
+## Line endings
+
+[Configuring Git to handle line endings](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings)
+
+# Writing R packages
+
+Please refer to this documentation for authoring R packages:
+
+* R manual [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
+* [R Packages (2e)](https://r-pkgs.org/) by Hadley Wickham and Jennifer Bryan.
