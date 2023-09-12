@@ -2,6 +2,7 @@ analyse
 apc
 api
 args
+arriage
 aut
 BugReports
 campbell
@@ -31,6 +32,8 @@ dplyr
 dtplyr
 duckdb
 DuckDB
+eed
+eturn
 familyName
 fileSize
 github
@@ -41,6 +44,7 @@ https
 Humber
 ICD
 IMD
+ine
 invalud
 iso
 issueTracker
@@ -68,8 +72,10 @@ orcid
 Organisation
 organisation
 os
+OSX
 Posix
 pre
+precommit
 Procodet
 procodet
 prodocdet
@@ -104,6 +110,7 @@ ucrt
 UEC
 uk
 useR
+usethis
 wher
 Wickham
 yaml
