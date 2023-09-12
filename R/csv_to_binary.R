@@ -5,10 +5,9 @@ library(cli)
 #' Use Duck DB to perform file format conversion.
 #'
 #' See:
-#' 
+#'
 #' - [DuckDB R API](https://duckdb.org/docs/archive/0.8.1/api/r)
 #' - [DBI documentation](https://dbi.r-dbi.org/)
-#' - [Example: "Quickly Convert CSV to Parquet with DuckDB"](https://rmoff.net/2023/03/14/quickly-convert-csv-to-parquet-with-duckdb)
 #'
 #' @param raw_data_dir String. Path. The directory that contains the raw data files.
 #' @param output_data_dir String. Path. The directory the output data file(s) should be written to.
