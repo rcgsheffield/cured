@@ -83,7 +83,7 @@ commits are made.
 
 [pre-commit](https://pre-commit.com/) runs Git
 [hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) that
-it is configured to run on the code base prior to Git commits being
+are configured to run on the code base prior to Git commits being
 made. It is highly configurable but as it is written in Python requires
 installing in order to analyse the R code and package structure of
 `cuRed`. If you are not already familiar with Python and the various
