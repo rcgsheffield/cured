@@ -8,4 +8,3 @@ See:
 - Wickham, R Packages (2e) [Raw data file](https://r-pkgs.org/data.html#sec-data-extdata)
 - roxygen2 [Documenting other objects](https://roxygen2.r-lib.org/articles/rd-other.html)
 - Stack Overflow [R and roxygen2: How to document data files in inst/extdata?](https://stackoverflow.com/a/36283724)
-
