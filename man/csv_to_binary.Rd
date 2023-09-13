@@ -17,13 +17,11 @@ csv_to_binary(raw_data_dir, output_data_dir, metadata)
 String. Path. The path of the output data file.
 }
 \description{
-DuckDB R API
-https://duckdb.org/docs/archive/0.8.1/api/r
+See:
 }
 \details{
-DBI documentation
-https://dbi.r-dbi.org/
-
-Example: "Quickly Convert CSV to Parquet with DuckDB"
-https://rmoff.net/2023/03/14/quickly-convert-csv-to-parquet-with-duckdb
+\itemize{
+\item \href{https://duckdb.org/docs/archive/0.8.1/api/r}{DuckDB R API}
+\item \href{https://dbi.r-dbi.org/}{DBI documentation}
+}
 }
