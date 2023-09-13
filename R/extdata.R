@@ -1,5 +1,5 @@
 # Data set documentation
-# https://stackoverflow.com/a/36283724
+# This file documents the data sets contained in inst/extdata
 
 #' HES Admitted Patient Care artificial data set
 #'
